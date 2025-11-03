@@ -2,6 +2,7 @@
 
 The **Notification Microservice** is responsible for handling and delivering notifications triggered by events from other microservices (for example, *Task Creation Events*).  
 It listens to Kafka topics, processes incoming events, and stores notifications in MongoDB Atlas for later delivery through different channels such as **Email** or **In-App notifications**.
+!!! IMPORTANT - in this project we use sub-module contracts as a shared module for communication between applications(currently it`s not published on central Maven and needs to be installed locally in you Maven cached repository. Please, view corresponding steps below)
 
 ---
 
@@ -31,6 +32,23 @@ spring.data.mongodb.uri=mongodb://<MongoDB Atlas URL>/notifications_db
 logging.level.root=INFO
 
 logging.level.com.notification_service=DEBUG
+
+# Local installation of org.vavilonLearn:contracts (for development)
+
+If you want to use the contracts module locally (not published to Maven Central), do the following steps on your dev machine.</br>
+1. Clone the contracts repository</br>
+	Open terminal / Windows CMD and clone</br>
+	# Windows CMD / PowerShell or bash</br>
+	git clone https://github.com/zaitsev-serhei/contracts.git</br>
+	cd contracts</br>
+
+2. Build and install into local Maven repository</br>
+	Build the project and install artifact into your local Maven repository (~/.m2/repository):</br>
+	# Simple build + install 
+	mvn -B clean install
+
+After successful run the artifact will be installed in your local repo under:
+~/.m2/repository/org/vavilonLearn/contracts/<version>/contracts-<version>.jar
 
 # 🧠 Key Classes
 |Class		|	Description</br>|
