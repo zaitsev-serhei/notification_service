@@ -17,17 +17,14 @@ It listens to Kafka topics, processes incoming events, and stores notifications 
 # ⚙️ Configuration
 
 Your application.properties file should contain the following settings:
-# ==========================
 # Kafka Configuration
-# ==========================
+
 spring.kafka.bootstrap-servers=localhost:9093
 spring.kafka.consumer.group-id=notification-service
 spring.kafka.consumer.auto-offset-reset=earliest
 spring.data.mongodb.uri=mongodb://<MongoDB Atlas URL>/notifications_db
 
-# ==========================
 # Logging Configuration
-# ==========================
 logging.level.root=INFO
 logging.level.com.notification_service=DEBUG
 
