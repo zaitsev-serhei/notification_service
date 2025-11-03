@@ -33,12 +33,12 @@ logging.level.root=INFO
 logging.level.com.notification_service=DEBUG
 
 # 🧠 Key Classes
-Class							Description
-NotificationKafkaListener	--> Listens to task-created Kafka topic and converts messages into notification entities</br>
-NotificationServiceImpl		--> Handles notification creation, mapping, and persistence logic</br>
-NotificationRepositoryMongo	--> Interface extending MongoRepository for CRUD operations</br>
-NotificationDocumentEntity	--> MongoDB document model describing notification fields</br>
-KafkaConfig	 				--> Defines consumer factory and listener configuration for Kafka</br>
+|Class				|	Description</br>|
+|NotificationKafkaListener	| Listens to task-created Kafka topic and converts messages into notification entities|
+|NotificationServiceImpl	| Handles notification creation, mapping, and persistence logic|
+|NotificationRepositoryMongo	| Interface extending MongoRepository for CRUD operations|
+|NotificationDocumentEntity	| MongoDB document model describing notification fields|
+|KafkaConfig	 				| Defines consumer factory and listener configuration for Kafka|
 
 # Testing the setup
 After starting the service, you can test Kafka & MongoDB integration by sending a sample message:
